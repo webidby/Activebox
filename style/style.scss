@@ -29,13 +29,17 @@ $bg-header: rgb(37, 43, 73, 0.8);
     transform: translateX(-50%);
     max-width: 1170px;
     width: 100%;
+
+    @media (max-width: 767px) {
+        padding: 19px 0;
+    }
 }
 
 .container {
     max-width: 1210px;
     width: 100%;
     margin: 0px auto;
-    // padding: 0 20px;
+    padding: 0 20px;
 }
 
 .nav {
@@ -44,8 +48,8 @@ $bg-header: rgb(37, 43, 73, 0.8);
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 768px) {
-        padding: 19px;
+    @media (max-width: 767px) {
+        padding-bottom: 19px;
     }
 
     &__menu {
@@ -57,15 +61,15 @@ $bg-header: rgb(37, 43, 73, 0.8);
         &-mob {
             display: none;
 
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
         }
 
-        @media (max-width: 768px) {
-            flex-direction: column;
+        @media (max-width: 767px) {
+            display: none;
         }
     }
 
@@ -90,7 +94,7 @@ $bg-header: rgb(37, 43, 73, 0.8);
         border-bottom: 3px solid transparent;
         transition: all 0.2s linear;
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             padding: 10px 0;
             opacity: 0;
             position: absolute;
@@ -119,6 +123,10 @@ $bg-header: rgb(37, 43, 73, 0.8);
     text-align: center;
     margin-bottom: 116px;
 
+    @media (max-width: 767px) {
+        padding: 106px 0 33px;
+    }
+
     &__container {
         position: relative;
         z-index: 1;
@@ -143,7 +151,6 @@ $bg-header: rgb(37, 43, 73, 0.8);
     text-transform: uppercase;
     color: $color-text;
     margin-bottom: 30px;
-    z-index: 1;
 }
 
 .text {
@@ -185,20 +192,19 @@ $bg-header: rgb(37, 43, 73, 0.8);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         row-gap: 92px;
+        column-gap: 29px;
 
         @media (min-width: 768px) and (max-width: 1024px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
 
     &__block {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
     &__img {
@@ -235,7 +241,7 @@ $bg-header: rgb(37, 43, 73, 0.8);
         grid-template-columns: repeat(4, 1fr);
 
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -267,6 +273,7 @@ $bg-header: rgb(37, 43, 73, 0.8);
         row-gap: 20px;
         opacity: 0;
         transition: all 0.3s linear;
+        padding: 10px;
 
         &:hover {
             opacity: 1;
@@ -305,7 +312,7 @@ $bg-header: rgb(37, 43, 73, 0.8);
             row-gap: 24px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             grid-template-columns: repeat(1, 1fr);
             row-gap: 24px;
         }
@@ -349,6 +356,8 @@ $bg-header: rgb(37, 43, 73, 0.8);
         display: flex;
         column-gap: 6px;
 
+
+
         &-block {
             width: 39px;
             height: 39px;
@@ -357,6 +366,23 @@ $bg-header: rgb(37, 43, 73, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: all 0.3s linear;
+
+            &:hover {
+                border: 1px solid $bg-bottom;
+            }
+
+            &:hover svg path {
+                fill: $bg-bottom;
+            }
+
+            &:active {
+                border: 1px solid $bg-b0ttom-active;
+            }
+
+            &:active svg path {
+                fill: $bg-b0ttom-active;
+            }
         }
     }
 }
@@ -368,7 +394,7 @@ $bg-header: rgb(37, 43, 73, 0.8);
     &__blocks {
         display: flex;
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             display: flex;
             flex-direction: column;
         }
@@ -377,8 +403,10 @@ $bg-header: rgb(37, 43, 73, 0.8);
     &__img {
         width: 50%;
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             width: 100%;
+            display: flex;
+            aspect-ratio: 1 / .4;
         }
     }
 
@@ -398,8 +426,9 @@ $bg-header: rgb(37, 43, 73, 0.8);
         padding: 20px 50px 10px 10px;
         row-gap: 24px;
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             width: 100%;
+            padding: 33px 20px 95px;
         }
 
         &-title {
@@ -420,6 +449,10 @@ $bg-header: rgb(37, 43, 73, 0.8);
             width: 100%;
             text-transform: uppercase;
             font-weight: 700;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
         }
     }
 
@@ -427,6 +460,10 @@ $bg-header: rgb(37, 43, 73, 0.8);
         display: flex;
         justify-content: center;
         column-gap: 25px;
+
+        @media (max-width: 767px) {
+            width: 100%;
+        }
     }
 
     &__next {
@@ -504,7 +541,7 @@ $bg-header: rgb(37, 43, 73, 0.8);
         margin-bottom: 71px;
         grid-template-columns: repeat(3, 1fr);
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             grid-template-columns: repeat(1, 1fr);
             row-gap: 34px;
         }
@@ -538,6 +575,23 @@ $bg-header: rgb(37, 43, 73, 0.8);
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all 0.3s linear;
+
+        &:hover {
+            border: 1px solid $bg-bottom;
+        }
+
+        &:hover svg path {
+            fill: $bg-bottom;
+        }
+
+        &:active {
+            border: 1px solid $bg-b0ttom-active;
+        }
+
+        &:active svg path {
+            fill: $bg-b0ttom-active;
+        }
     }
 
     &__text {
@@ -551,9 +605,8 @@ $bg-header: rgb(37, 43, 73, 0.8);
         padding: 24px 0;
 
         &-container {
-            max-width: 370px;
+            max-width: 410px;
             width: 100%;
-            padding: 24px 0px;
         }
 
         &-text {
